@@ -17,7 +17,17 @@
 (setq use-package-always-ensure t)
 
 
-(setq package-selected-packages '(evil lsp-mode lsp-treemacs company web-mode json-mode yasnippet))
+(setq package-selected-packages
+      '(evil
+	lsp-mode
+	lsp-treemacs
+	company
+	web-mode
+	emmet-mode
+	smartparens
+	solarized-theme
+	json-mode
+	yasnippet))
 
 (when (cl-find-if-not #'package-installed-p package-selected-packages)
   (package-refresh-contents)

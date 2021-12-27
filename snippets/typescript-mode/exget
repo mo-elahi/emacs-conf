@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Express get method
+# key: exget
+# --
+
+${1:app}.get($2, (res, req, next) => {$3});

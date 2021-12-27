@@ -14,11 +14,12 @@
 
 
 ;; Font Face
-(set-face-attribute 'default nil :font "Fira Code Retina" :height 160)
+(set-face-attribute 'default nil :font "Fira Code Retina" :height 200)
 
 ;; Line number for editor
 (when (version<= "26.0.50" emacs-version )
-  (global-display-line-numbers-mode))
+  (global-display-line-numbers-mode)
+  (setq display-line-numbers-type 'relative))
 
 ;; icons
 (use-package all-the-icons)
@@ -27,19 +28,6 @@
   :ensure t
   :init (doom-modeline-mode 1)
   :custom ((doom-modeline-height 15)))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(company-web restclient prettier-js sass-mode scss-mode solarized-theme emmet-mode web-mode smartparens python-mode javascript-mode rainbow-delimiters evil-nerd-commenter typescript-mode company-box company lsp-treemacs lsp-ui lsp-mode which-key doom-modeline use-package)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 ;; Helper for key bindings
 (use-package which-key

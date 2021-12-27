@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Express use method
+# key: exuse
+# --
+${1:app}.use($2, (res, req, next) => {$3});

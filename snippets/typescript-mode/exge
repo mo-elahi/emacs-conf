@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Express get method short 
+# key: exge
+# --
+
+${1:app}.get($2, $3);

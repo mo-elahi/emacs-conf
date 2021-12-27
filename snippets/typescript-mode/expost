@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Express post method
+# key: expost
+# --
+${1:app}.post($2, (res, req, next) => {$3});

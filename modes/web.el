@@ -3,24 +3,16 @@
 ;;; Code:
 (use-package web-mode
   :ensure t
-  :mode ("\\.html\\'")
+  :mode ("\\.html\\'" "\\.php\\'")
   :hook (web-mode . lsp-deferred)
   :config
-  (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-css-indent-offset 2)
-  (setq web-mode-code-indent-offset 2)
   (setq web-mode-enable-current-element-highlight t)
   (setq web-mode-enable-css-colorization t)
+  (setq web-mode-enable-auto-closing t)
+  (setq web-mode-enable-auto-pairing t)
   (set-face-attribute 'web-mode-html-tag-face nil :foreground "royalblue")
   (set-face-attribute 'web-mode-html-attr-name-face nil :foreground "powderblue")
   (set-face-attribute 'web-mode-doctype-face nil :foreground "lightskyblue"))
-  ;; (use-package company-web
-  ;;   :ensure t)
-  ;; (add-hook 'web-mode-hook (lambda()
-  ;;                            (cond ((equal web-mode-content-type "html")
-  ;;                                   (my/web-html-setup))
-  ;;                                  ((member web-mode-content-type '("vue"))
-  ;;                                   (my/web-vue-setup))))))
 
 ;;
 ;; html
@@ -64,8 +56,7 @@
                              (add-to-list (make-local-variable 'company-backends)
                                           '(company-css company-files company-yasnippet company-capf))))
   (setq css-indent-offset 2)
-  (setq flycheck-stylelintrc "~/.stylelintrc")
-  )
+  (setq flycheck-stylelintrc "~/.stylelintrc"))
 
 
 (use-package scss-mode
@@ -110,6 +101,7 @@
 (use-package prettier-js
   :ensure t
   :hook ((js2-mode . prettier-js-mode)
+	 (typescript-mode . prettier-js-mode)
          (typescript-mode . prettier-js-mode)
          (css-mode . prettier-js-mode)
          (web-mode . prettier-js-mode))
@@ -129,15 +121,3 @@
   :ensure t
   :mode ("\\.http\\'" . restclient-mode))
 
-;;
-;; pug support
-;;
-
-(add-to-list 'load-path "~/.emacs.d/modes/jade-mode")
-(require 'sws-mode)
-(require 'jade-mode)
-(add-to-list 'auto-mode-alist '("\\.styl\\'" . sws-mode))
-(require 'company-web-jade)
-
-(provide 'web)
-;;; web.el ends here

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Express post method short
+# key: expos
+# --
+
+${1:app}.post($2, $3);

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Express use method short form 
+# key: exus
+# --
+
+${1:app}.use($2, $3);
