@@ -90,19 +90,16 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; javascript and typescript support for lsp-mode
-(use-package typescript-mode
-  :mode ("\\.ts\\'" "\\.js\\'")
-  :hook (typescript-mode . lsp-deferred)
-  :config
-  (setq typescript-indent-level 2))
 
+(use-package typescript-mode
+  :ensure t
+  :mode ("\\.ts\\'" "\\.js\\'")
+  :hook (typescript-mode . lsp-deferred))
 
 
 (use-package prettier-js
   :ensure t
   :hook ((js2-mode . prettier-js-mode)
-	 (typescript-mode . prettier-js-mode)
-         (typescript-mode . prettier-js-mode)
          (css-mode . prettier-js-mode)
          (web-mode . prettier-js-mode))
   :config
@@ -110,7 +107,6 @@
                            "--trailing-comma" "es5"
                            "--bracket-spacing" "false"
                            )))
-
 
 ;;
 ;; restful client

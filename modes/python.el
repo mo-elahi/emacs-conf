@@ -1,3 +1,8 @@
+;; using jedi language server for python
+(use-package lsp-jedi
+  :ensure t)
+
+
 ;; python support for lsp-mode
 (use-package python-mode
   :mode "\\.py\\'"

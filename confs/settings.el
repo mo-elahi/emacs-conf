@@ -1,5 +1,8 @@
 (setq inhibit-startup-message t)
 
+;; start every frame maximized
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 (scroll-bar-mode -1)        ; Disable visible scrollbar
 (tool-bar-mode -1)          ; Disable the toolbar
 (tooltip-mode -1)           ; Disable tooltips
@@ -12,6 +15,7 @@
 
 (load-theme 'solarized-dark t)
 
+(setq auto-save-default nil)
 
 ;; Font Face
 (set-face-attribute 'default nil :font "Fira Code Retina" :height 200)

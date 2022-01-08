@@ -1,4 +1,4 @@
-;; lsp-mode config
+;; lsp-mode setup
 (defun efs/lsp-mode-setup ()
   (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
   (lsp-headerline-breadcrumb-mode))
@@ -19,3 +19,4 @@
 (use-package lsp-treemacs
   :after lsp)
 
+(use-package lsp-ivy); lsp-mode config
