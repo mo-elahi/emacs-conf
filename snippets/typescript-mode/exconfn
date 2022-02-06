@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Express middleware function definer
+# key: exconfn
+# --
+
+function ${1:middleware}(${2:req}${3:: Request}, ${4:res}${5:: Response}) {$6}

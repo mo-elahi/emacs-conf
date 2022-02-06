@@ -20,3 +20,5 @@
   :after lsp)
 
 (use-package lsp-ivy); lsp-mode config
+
+(use-package dap-mode)

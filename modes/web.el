@@ -93,15 +93,20 @@
 
 (use-package typescript-mode
   :ensure t
-  :mode ("\\.ts\\'" "\\.js\\'")
-  :hook (typescript-mode . lsp-deferred))
-
+  :mode ("\\.ts\\'" "\\.js\\'" "\\.tsx\\'" "\\.jsx'")
+  :hook (typescript-mode . lsp-deferred)
+  :config
+  (setq typescript-indent-level 2)
+  (require 'dap-chrome)
+  (dap-chrome-setup)
+  (require 'dap-node)
+  (dap-node-setup))
 
 (use-package prettier-js
   :ensure t
   :hook ((js2-mode . prettier-js-mode)
-         (css-mode . prettier-js-mode)
-         (web-mode . prettier-js-mode))
+	 (typescript-mode . prettier-js-mode)
+         (css-mode . prettier-js-mode))
   :config
   (setq prettier-js-args '(
                            "--trailing-comma" "es5"
@@ -117,3 +122,9 @@
   :ensure t
   :mode ("\\.http\\'" . restclient-mode))
 
+
+;;
+;; php formatter
+;;
+
+(require 'php-cs-fixer)

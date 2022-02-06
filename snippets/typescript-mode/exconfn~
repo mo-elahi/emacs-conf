@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Express middleware function definer
+# key: exconfn
+# --
+
+function ${1:middleware}($
